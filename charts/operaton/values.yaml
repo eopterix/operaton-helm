@@ -21,7 +21,7 @@ commonLabels: {}
 
 image:
   repository: operaton/operaton
-  tag: 1.0.0-beta-4
+  tag: 2.1.0
   pullPolicy: IfNotPresent
   pullSecrets: []
   command: []
@@ -45,17 +45,42 @@ persistence:
   # Size of the PVC.
   size: 256Mi
 
+bpmEngine:
+  autoDeployment: false
+  historyLevel: ACTIVITY
+  adminUser:
+    username: demo
+    password: demo
+
 # By default H2 database is used, which is handy for demos and tests,
 # however, H2 is not supported in a clustered scenario.
 # So for real-world workloads, an external database like PostgreSQL should be used.
 database:
-  driver: org.h2.Driver
-  url: jdbc:h2:./operaton-h2-dbs/process-engine
+  driver: ""
+  url: ""
   credentialsSecretEnabled: true
-  credentialsSecretName: ""
+  credentialsSecretName: operaton-postgresql-credentials
   credentialsSecretKeys:
     username: DB_USERNAME
     password: DB_PASSWORD
+
+postgres:
+  enabled: true
+  nameOverride: postgres
+  architecture: standalone
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: latest
+  auth:
+    database: operaton
+    username: operaton
+    enablePostgresUser: false
+    existingSecret: operaton-postgresql-credentials
+    secretKeys:
+      userPasswordKey: DB_PASSWORD
+  metrics:
+    enabled: false
 
 service:
   enabled: true
