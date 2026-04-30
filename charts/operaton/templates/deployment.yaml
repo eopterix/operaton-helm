@@ -65,10 +65,17 @@ spec:
               value: "{{ .Values.general.debug }}"
             - name: JMX_PROMETHEUS
               value: "{{ .Values.metrics.enabled }}"
+            {{- if .Values.postgres.enabled }}
+            - name: DB_DRIVER
+              value: "org.postgresql.Driver"
+            - name: DB_URL
+              value: "jdbc:postgresql://{{ .Release.Name }}-{{ .Values.postgres.nameOverride }}:5432/{{ .Values.postgres.auth.database }}"
+            {{- else }}
             - name: DB_DRIVER
               value: "{{ .Values.database.driver }}"
             - name: DB_URL
               value: "{{ .Values.database.url }}"
+            {{- end }}
             {{- if .Values.database.credentialsSecretEnabled }}
             - name: DB_USERNAME
               valueFrom:
@@ -81,6 +88,14 @@ spec:
                   name: {{ .Values.database.credentialsSecretName | default $fullName }}
                   key: {{ .Values.database.credentialsSecretKeys.password }}
             {{- end }}
+            - name: OPERATON_BPM_AUTO_DEPLOYMENT_ENABLED
+              value: "{{ .Values.bpmEngine.autoDeployment }}"
+            - name: OPERATON_BPM_HISTORY_LEVEL
+              value: "{{ .Values.bpmEngine.historyLevel }}"
+            - name: "OPERATON_BPM_ADMIN-USER_ID"
+              value: "{{ .Values.bpmEngine.adminUser.username }}"
+            - name: "OPERATON_BPM_ADMIN-USER_PASSWORD"
+              value: "{{ .Values.bpmEngine.adminUser.password }}"
           {{- if .Values.extraEnvs }}
           {{- with tpl (toYaml .Values.extraEnvs) . }}
             {{ . | nindent 12 }}
