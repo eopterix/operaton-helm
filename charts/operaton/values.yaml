@@ -188,15 +188,22 @@ resources:
     memory: 512Mi
 
 extraVolumeMounts:
-  - name: init-script
+  - name: keycloak-plugin-init-sh
     mountPath: /scripts
+    readOnly: true
+  - name: keycloak-plugin-default-yml
+    mountPath: /configuration
     readOnly: true
 
 extraVolumes:
-  - name: init-script
+  - name: keycloak-plugin-init-sh
     configMap:
-      name: keycloak-plugin-init-script
+      name: keycloak-plugin-init
       defaultMode: 0755
+  - name: keycloak-plugin-default-yml
+    configMap:
+      name: keycloak-plugin-default
+      #defaultMode: 0755
 
 autoscaling:
   enabled: false

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-plugin-init
+data:
+  init.sh: |-
+{{ .Files.Get "keycloak-plugin/init.sh" | indent 4 }}
