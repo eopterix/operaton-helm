@@ -86,7 +86,7 @@ jobs:
 #        uses: helm/chart-testing-action@v2.7.0
 #
   release:
-    needs: test-install-chart
+    #needs: test-install-chart
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
