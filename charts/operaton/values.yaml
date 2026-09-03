@@ -24,8 +24,8 @@ image:
   tag: 2.2.0-M2
   pullPolicy: IfNotPresent
   pullSecrets: []
-  command: ["/bin/sh", "/scripts/init.sh"]
-  args: []
+  command: ["/bin/bash"]
+  args: ["-c", "/scripts/init.sh"]
 
 # Extra environment variables to customize the deployment.
 # For more details: https://github.com/operaton/operaton-docker
