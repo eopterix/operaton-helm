@@ -12,4 +12,4 @@ chmod 644 /operaton/configuration/userlib/operaton-keycloak-run-${PLUGIN_VERSION
 echo "Keycloak plugin added."
 echo "Starting Operaton..."
 cd /operaton
-./operaton
+./operaton.sh
