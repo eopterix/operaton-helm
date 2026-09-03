@@ -190,11 +190,13 @@ resources:
 extraVolumeMounts:
   - name: init-script
     mountPath: /scripts
+    readOnly: true
 
 extraVolumes:
   - name: init-script
     configMap:
       name: keycloak-plugin-init-script
+      defaultMode: 0755
 
 autoscaling:
   enabled: false
