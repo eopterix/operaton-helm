@@ -21,10 +21,10 @@ commonLabels: {}
 
 image:
   repository: operaton/operaton
-  tag: 2.1.0
+  tag: 2.2.0-M2
   pullPolicy: IfNotPresent
   pullSecrets: []
-  command: []
+  command: ["/bin/sh", "/scripts/init.sh"]
   args: []
 
 # Extra environment variables to customize the deployment.
@@ -188,15 +188,13 @@ resources:
     memory: 512Mi
 
 extraVolumeMounts:
-  []
-# - name: dummy-volume
-#   mountPath: /dummy/volume
+  - name: init-script
+    mountPath: /scripts
 
 extraVolumes:
-  []
-# - name: dummy-volume
-  # hostPath:
-  # path: /tmp/dummy-volume
+  - name: init-script
+    configMap:
+      name: keycloak-plugin-init-script
 
 autoscaling:
   enabled: false
