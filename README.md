@@ -35,7 +35,7 @@ The output should be something like:
 
 ```
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION                 
-operaton/operaton       1.0.6           2.1.0           Helm chart for Operaton
+operaton/operaton       1.0.7           2.2.0-M2        Helm chart for Operaton
 ```
 
 Note: The `--devel` flag includes development versions in the search results. Without this flag, only stable versions will be listed.
