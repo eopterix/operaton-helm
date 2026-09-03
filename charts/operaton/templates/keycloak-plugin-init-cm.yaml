@@ -4,4 +4,4 @@ metadata:
   name: keycloak-plugin-init
 data:
   init.sh: |-
-{{- tpl ($.Files.Get "keycloak-plugin/init.sh") . | nindent 4 }}
+{{ .Files.Get "keycloak-plugin/init.sh" | nindent 4 }}

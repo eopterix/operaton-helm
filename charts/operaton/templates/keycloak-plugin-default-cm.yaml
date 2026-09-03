@@ -4,4 +4,4 @@ metadata:
   name: keycloak-plugin-default
 data:
   default.yml: |-
-{{- tpl ($.Files.Get "keycloak-plugin/default.yml") . | nindent 4 }}
+{{ .Files.Get "keycloak-plugin/default.yml" | nindent 4 }}
