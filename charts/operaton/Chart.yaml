@@ -5,7 +5,7 @@ description: |
 type: application
 version: 1.0.7
 appVersion: 2.2.0-M2
-keywords:
+keywords: 
   - bpm
   - bpmn
   - operaton
