@@ -3,8 +3,8 @@ name: operaton
 description: |
   Helm chart for Operaton
 type: application
-version: 1.0.6
-appVersion: 2.1.0
+version: 1.0.7
+appVersion: 2.2.0-M2
 keywords:
   - bpm
   - bpmn
@@ -28,7 +28,7 @@ dependencies:
     repository: https://charts.bitnami.com/bitnami
     version: 18.6.2
     condition: postgres.enabled
-    alias: postgres    
+    alias: postgres
 annotations:
   artifacthub.io/links: |
     - name: Operaton BPM Helm chart
