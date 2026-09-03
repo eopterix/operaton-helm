@@ -20,3 +20,5 @@ data:
     chmod 644 /operaton/configuration/userlib/operaton-keycloak-run-${PLUGIN_VERSION}.jar
 
     echo "Keycloak plugin added."
+    cd /operaton
+    ./operaton
