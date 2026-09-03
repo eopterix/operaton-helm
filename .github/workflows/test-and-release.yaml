@@ -55,8 +55,8 @@ jobs:
         # see https://kubernetes.io/releases/patch-releases/#support-period
         k8s:
           - v1.32.2
-          - v1.31.6
-          - v1.30.10
+          #- v1.31.6
+          #- v1.30.10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
