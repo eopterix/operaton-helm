@@ -3,7 +3,7 @@ name: operaton
 description: |
   Helm chart for Operaton
 type: application
-version: 1.0.26
+version: 1.0.27
 #appVersion: 2.2.0-M1
 appVersion: 2.1.1
 keywords: 
