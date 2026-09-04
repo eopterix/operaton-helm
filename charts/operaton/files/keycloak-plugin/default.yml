@@ -28,3 +28,4 @@ logging:
     org.keycloak: DEBUG
     org.operaton: DEBUG
     org.springframework.web: DEBUG
+
