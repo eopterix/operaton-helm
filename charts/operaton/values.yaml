@@ -193,8 +193,8 @@ extraVolumeMounts:
     mountPath: /scripts
     readOnly: true
   - name: keycloak-plugin-default-yml
-    mountPath: /operaton/configuration
-    subPath: default.yml # important
+    mountPath: /operaton/configuration/default.yml # important (single file mount)
+    subPath: default.yml # yes, also important (single file mount)
     readOnly: true
 
 extraVolumes:
