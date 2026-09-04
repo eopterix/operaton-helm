@@ -98,6 +98,10 @@ spec:
             - name: "OPERATON_BPM_ADMIN-USER_PASSWORD"
               value: "{{ .Values.bpmEngine.adminUser.password }}"
             {{- else }} # either this or that, just one
+            - name: "KEYCLOAK_HOST"
+              value: "{{ .Values.keycloak.host }}"
+            - name: "KEYCLOAK_REALM"
+              value: "{{ .Values.keycloak.realm }}"
             - name: "KEYCLOAK_ISSUER_URL"
               value: "{{ .Values.keycloak.issuerUrl }}"
             - name: "KEYCLOAK_ADMIN_URL"
