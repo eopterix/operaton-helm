@@ -1,5 +1,5 @@
 #!/bin/sh
-PLUGIN_VERSION=2.2.0-M2
+PLUGIN_VERSION=2.2.0-M1
 SRC_URL=https://repo1.maven.org/maven2/org/operaton/bpm/extension/operaton-keycloak-run/${PLUGIN_VERSION}/operaton-keycloak-run-${PLUGIN_VERSION}.jar
 TARGET_FILE=/operaton/configuration/userlib/operaton-keycloak-run-${PLUGIN_VERSION}.jar
 if [ ! -f "$TARGET_FILE" ]; then
@@ -12,5 +12,5 @@ else
 fi
 echo "Starting Operaton..."
 cd /operaton
-./operaton.sh
+/sbin/tini -- ./operaton.sh
 
