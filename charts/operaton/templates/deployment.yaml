@@ -92,10 +92,10 @@ spec:
               value: "{{ .Values.bpmEngine.autoDeployment }}"
             - name: OPERATON_BPM_HISTORY_LEVEL
               value: "{{ .Values.bpmEngine.historyLevel }}"
-            - name: "OPERATON_BPM_ADMIN-USER_ID"
-              value: "{{ .Values.bpmEngine.adminUser.username }}"
-            - name: "OPERATON_BPM_ADMIN-USER_PASSWORD"
-              value: "{{ .Values.bpmEngine.adminUser.password }}"
+            #- name: "OPERATON_BPM_ADMIN-USER_ID"
+            #  value: "{{ .Values.bpmEngine.adminUser.username }}"
+            #- name: "OPERATON_BPM_ADMIN-USER_PASSWORD"
+            #  value: "{{ .Values.bpmEngine.adminUser.password }}"
           {{- if .Values.extraEnvs }}
           {{- with tpl (toYaml .Values.extraEnvs) . }}
             {{ . | nindent 12 }}
