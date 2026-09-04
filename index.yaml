@@ -12,6 +12,48 @@ entries:
           url: https://github.com/operaton/operaton
     apiVersion: v2
     appVersion: 2.2.0-M2
+    created: "2026-09-04T10:18:07.64439482Z"
+    dependencies:
+    - alias: postgres
+      condition: postgres.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.6.2
+    description: 'Helm chart for Operaton '
+    digest: e4e086a42cedb4a6c78a0cd4fe2e382ff659f54ca337c885f0b72f22b4fbb1e6
+    home: https://operaton.org
+    icon: https://operaton.github.io/operaton-helm/operaton-logo.png
+    keywords:
+    - bpm
+    - bpmn
+    - operaton
+    - operaton-engine
+    - dmn
+    - process-engine
+    - workflow
+    maintainers:
+    - name: Jaye
+      url: https://github.com/jmaster1985
+    name: operaton
+    sources:
+    - https://github.com/operaton/operaton-helm/tree/main/charts/operaton
+    - https://github.com/operaton/operaton-docker
+    - https://github.com/operaton/operaton
+    type: application
+    urls:
+    - https://github.com/eopterix/operaton-helm/releases/download/operaton-1.0.21/operaton-1.0.21.tgz
+    version: 1.0.21
+  - annotations:
+      artifacthub.io/changes: ""
+      artifacthub.io/links: |
+        - name: Operaton BPM Helm chart
+          url: https://github.com/operaton/operaton-helm/tree/main/charts/operaton
+        - name: Operaton BPM Docker
+          url: https://github.com/operaton/operaton-docker
+        - name: Operaton BPM
+          url: https://github.com/operaton/operaton
+    apiVersion: v2
+    appVersion: 2.2.0-M2
     created: "2026-09-04T09:40:31.315618795Z"
     dependencies:
     - alias: postgres
@@ -589,4 +631,4 @@ entries:
     urls:
     - https://github.com/eopterix/operaton-helm/releases/download/operaton-1.0.7/operaton-1.0.7.tgz
     version: 1.0.7
-generated: "2026-09-04T09:40:31.315726406Z"
+generated: "2026-09-04T10:18:07.64447579Z"
