@@ -21,3 +21,10 @@ plugin.identity.keycloak:
   useGroupPathAsOperatonGroupId: true
   administratorGroupName: operaton-admin
 
+logging:
+  level:
+    org.springframework: DEBUG
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG
+    org.operaton: DEBUG
+    org.springframework.web: DEBUG
