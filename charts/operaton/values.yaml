@@ -48,9 +48,10 @@ persistence:
 bpmEngine:
   autoDeployment: false
   historyLevel: ACTIVITY
-  adminUser:
-    username: demo
-    password: demo
+# TODO: conditional, vars, etc... :)
+#  adminUser:
+#    username: demo
+#    password: demo
 
 # By default H2 database is used, which is handy for demos and tests,
 # however, H2 is not supported in a clustered scenario.
