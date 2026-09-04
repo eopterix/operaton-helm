@@ -9,7 +9,7 @@ if [ ! -f "$TARGET_FILE" ]; then
   chmod 644 /operaton/configuration/userlib/operaton-keycloak-run-${PLUGIN_VERSION}.jar
   echo "Keycloak plugin added."
 else
-  echo "Keycloak plugin already there."B
+  echo "Keycloak plugin already there."
 fi
 echo "Starting Operaton..."
 cd /operaton
