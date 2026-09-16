@@ -6,6 +6,29 @@ operaton.bpm:
   authorization:
     enabled: true
 
+spring.security.oauth2:
+  client:
+    registration:
+      keycloak:
+        provider: keycloak
+        client-id: ${KEYCLOAK_CLIENT_ID:operaton-identity-service}
+        client-secret: ${KEYCLOAK_CLIENT_SECRET:operaton-keycloak-secret}
+        authorization-grant-type: authorization_code
+        redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
+        scope: openid, profile, email
+    provider:
+      keycloak:
+        issuer-uri: https://iam-auth.dev.terrabyte.lrz.de/realms/eoepca
+        authorization-uri: https://iam-auth.dev.terrabyte.lrz.de/realms/eoepca/protocol/openid-connect/auth
+        user-info-uri: https://iam-auth.dev.terrabyte.lrz.de/realms/eoepca/protocol/openid-connect/userinfo
+        token-uri: https://iam-auth.dev.terrabyte.lrz.de/realms/eoepca/protocol/openid-connect/token
+        jwk-set-uri: https://iam-auth.dev.terrabyte.lrz.de/realms/eoepca/protocol/openid-connect/certs
+        # set user-name-attribute one of: 
+        # - sub                -> default; using keycloak ID as Operaton user ID
+        # - email              -> useEmailAsOperatonUserId=true
+        # - preferred_username -> useUsernameAsOperatonUserId=true
+        user-name-attribute: preferred_username
+
 spring.datasource:
   url: ${DB_URL:jdbc:postgresql://postgres:5432/operaton}
   driver-class-name: org.postgresql.Driver
