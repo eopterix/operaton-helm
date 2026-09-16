@@ -6,6 +6,15 @@ operaton.bpm:
   authorization:
     enabled: true
 
+plugin.identity.keycloak:
+  keycloakIssuerUrl: ${KEYCLOAK_ISSUER_URL:http://keycloak:8080/auth/realms/operaton}
+  keycloakAdminUrl: ${KEYCLOAK_ADMIN_URL:http://keycloak:8080/auth/admin/realms/operaton}
+  clientId: ${KEYCLOAK_CLIENT_ID:operaton-identity-service}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:operaton-keycloak-secret}
+  useUsernameAsOperatonUserId: true
+  useGroupPathAsOperatonGroupId: true
+  administratorGroupName: operaton-admin
+
 spring.security.oauth2:
   client:
     registration:
@@ -34,15 +43,6 @@ spring.datasource:
   driver-class-name: org.postgresql.Driver
   username: ${DB_USERNAME:operaton}
   password: ${DB_PASSWORD:operaton}
-
-#plugin.identity.keycloak:
-#  keycloakIssuerUrl: ${KEYCLOAK_ISSUER_URL:http://keycloak:8080/auth/realms/operaton}
-#  keycloakAdminUrl: ${KEYCLOAK_ADMIN_URL:http://keycloak:8080/auth/admin/realms/operaton}
-#  clientId: ${KEYCLOAK_CLIENT_ID:operaton-identity-service}
-#  clientSecret: ${KEYCLOAK_CLIENT_SECRET:operaton-keycloak-secret}
-#  useUsernameAsOperatonUserId: true
-#  useGroupPathAsOperatonGroupId: true
-#  administratorGroupName: operaton-admin
 
 logging:
   level:
