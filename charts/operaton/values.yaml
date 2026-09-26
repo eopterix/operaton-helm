@@ -25,6 +25,8 @@ image:
   #tag: 2.2.0-M1
   pullPolicy: IfNotPresent
   pullSecrets: []
+  command: ["./operaton.sh"]
+  args: ["--oauth2", "--webapps"]
 #  command: ["/bin/bash"]
 #  args: ["-c", "/scripts/init.sh"]
 
